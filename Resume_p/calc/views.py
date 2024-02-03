@@ -11,20 +11,11 @@ import json
 import os
 import requests
 import logging
-from win32com import client as wc
-import pythoncom
+
 from .models import Contact
 
 
-def convert_docx_to_doc(docx_path, doc_path):
-    pythoncom.CoInitialize()
-    word = wc.Dispatch('Word.Application')
-    word.Visible = 0  # Hide the Word application
-    doc = word.Documents.Open(docx_path)
-    doc.SaveAs(doc_path, FileFormat=0)  # FileFormat=0 corresponds to .doc format
-    doc.Close()
-    word.Quit()
-    pythoncom.CoUninitialize()
+
 
 def home(request):
     return render(request, 'index1.html')
