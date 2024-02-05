@@ -43,11 +43,11 @@ def upload(request):
             form.save()
             file_name = str(request.FILES['file'])
             sanitized_file_name = file_name.replace(' ', '_')
-            path = os.path.join('D:\\Resume Parser Project\\Resume_p\\media', sanitized_file_name)
+            path = os.path.join('D://Resume Parser Project//Resume_p//media', sanitized_file_name)
             temp=0
             if file_name.lower().endswith('.docx'):
                 # Convert .docx to .doc
-                doc_path = os.path.join('D:\\Resume Parser Project\\Resume_p\\media\\uploads', sanitized_file_name.replace('.docx', '.doc'))
+                doc_path = os.path.join('D://Resume Parser Project//Resume_p//media//uploads', sanitized_file_name.replace('.docx', '.doc'))
                 temp=1
                 convert_docx_to_doc(path, doc_path)
             headers = {"Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiMmQ2OTlhODctOTIxMC00YWE3LThhYmEtMjdlYjkyNGYyNzc3IiwidHlwZSI6ImFwaV90b2tlbiJ9.drNIW3vajSMe7jITN3vxdglzhm1SxXIxeIa_58bmOWY"}
