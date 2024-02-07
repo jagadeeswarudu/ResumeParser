@@ -14,7 +14,8 @@ import logging
 
 from .models import Contact
 
-
+MEDIA_ROOT = os.path.join(BASE_DIR,'media')
+UPLOADS_PATH = os.path.join(MEDIA_ROOT, 'uploads')
 
 
 def home(request):
